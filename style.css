@@ -1,11 +1,55 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-input {
+body {
+    margin: 2rem auto;
+    height: 100vh;
+    max-width: 800px;
+    overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.search-container {
+    width: 100%;
+}
+
+#username-input {
+    display: block;
+    margin: 4px 0 2rem 0;
     padding: 8px 12px;
+    width: 100%;
+}
+
+#error-message {
+    color: red;
+    display: none;
+}
+
+#usernames-data {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#usernames-data li {
+    margin: 2px 0;
+    padding: 16px;
+    background: rgb(106, 148, 106);
+    color: white;
+    text-align: center;
+    list-style: none;
+    user-select: none;
+}
+
+.success {
+    background: darkseagreen
+}
+
+.error {
+    background: lightcoral;
 }

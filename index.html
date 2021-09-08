@@ -8,8 +8,22 @@
     <title>Build Seach Bar</title>
 </head>
 <body>
-    <input type="text" id="username-input" placeholder="Type an username...">
-    <div id="result-container"></div>
-    <script src="app.js"></script>
+    <div class="seach-container">
+        <label for="username-input">Seach for user:</label>
+        <input type="text" id="username-input" placeholder="Please type in an username...">
+        <p id="error-message">Please enter another username and try again...</p>
+    </div>
+    <ul id="usernames-data">
+        <li class="username">Karl</li>
+        <li class="username">Per</li>
+        <li class="username">Katie</li>
+        <li class="username">Lupe</li>
+        <li class="username">Katherine</li>
+        <li class="username">Kelly</li>
+        <li class="username">Kurt</li>
+        <li class="username">Fred</li>
+    </ul>
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>
