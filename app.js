@@ -7,8 +7,7 @@ class App {
         this.$errorMessage = document.querySelector('#error-message');
         
         this.usersList = getUsersList();
-        this.isMatched = false;
-        this.hasSearchQuery = false;
+        this.isMatched;
         this.match = '';
         
         this.getInputData();
@@ -16,21 +15,26 @@ class App {
     
     getInputData() {
         this.$usernameInput.addEventListener('keyup', (event) => {
-            const searchQuery = event.target.value.toLowerCase();
-            console.log('searchQuery:', searchQuery)
-            
-            for(let i in this.usersList) {
-                if(searchQuery === this.usersList[i].toLowerCase()) {
-                    this.isMatched = true;
-                    this.match = this.usersList[i];
+            this.isMatched = false;
+            const hasSearchQuery = this.$usernameInput.value.length > 0;
+            if(hasSearchQuery) {
+                const searchQuery = event.target.value.toLowerCase();
+                console.log('searchQuery:', searchQuery)
+                
+                for(let i in this.usersList) {
+                    if(searchQuery === this.usersList[i].toLowerCase()) {
+                        this.isMatched = true;
+                        this.match = this.usersList[i];
+                    }
                 }
+                this.render();
             }
-            this.render();
         });
     }
     
     render() {
         if (this.isMatched) {
+            this.$errorMessage.style.display = "none";
           this.$usernamesData.innerHTML = `<li class="username">${this.match}</li>`;
         } else {
             this.$errorMessage.style.display = 'block';
